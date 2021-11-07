@@ -8,7 +8,7 @@ dotenv.config()
 import postRoutes from "./routes/posts.js"
 
 const app = express()
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 5000
 
 app.use(express.json({ limit: "30mb", extended: true }))
 app.use(express.urlencoded({ limit: "30mb", extended: true }))
@@ -21,6 +21,6 @@ mongoose
       console.log(`App now listening on port ${PORT}`)
     })
   })
-  .catch((err) => console.log(err.message))
+  .catch((err) => console.log(err))
 
 app.use("/posts", postRoutes)

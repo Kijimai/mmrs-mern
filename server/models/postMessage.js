@@ -1,7 +1,6 @@
 import mongoose from "mongoose"
-import {Schema} from mongoose
 
-const postSchema = Schema({
+const postSchema = mongoose.Schema({
   title: String,
   message: String,
   author: String,
@@ -9,13 +8,11 @@ const postSchema = Schema({
   selectedFile: String,
   likeCount: {
     type: Number,
-    default: 0
+    default: 0,
   },
-  createdAt: {type: Date,
-    default: new Date()
-  }
+  createdAt: { type: Date, default: new Date() },
 })
 
-const PostMessage = mongoose.model('Post', postSchema)
+const PostMessage = mongoose.model("PostMessage", postSchema)
 
 export default PostMessage
